@@ -1,45 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<title>Download Neatlyst</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Neatlyst</title>
+
+<!-- Redirección rápida -->
 <script>
-window.onload = function() {
 
-    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+const android =
+"https://play.google.com/store/apps/details?id=com.neatlyst.neatlystapp";
 
-    // iOS detection
-    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+const ios =
+"https://apps.apple.com/us/app/neatlyst/id1091657112";
 
-        window.location.href =
-        "https://apps.apple.com/us/app/neatlyst/id1091657112";
+const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-    }
+// iPhone / iPad
+if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
 
-    // Android detection
-    else if (/android/i.test(userAgent)) {
+    window.location.replace(ios);
 
-        window.location.href =
-        "https://play.google.com/store/apps/details?id=com.neatlyst.neatlystapp";
+}
 
-    }
+// Android
+else if (/android/i.test(userAgent)) {
 
-    // Desktop fallback
-    else {
+    window.location.replace(android);
 
-        window.location.href =
-        "https://www.neatlyst.com/";
+}
 
-    }
-};
+// Desktop
+else {
+
+    window.location.replace(android);
+
+}
+
 </script>
+
+<style>
+
+html,body{
+    margin:0;
+    background:#ffffff;
+}
+
+</style>
 
 </head>
 
 <body>
-
-<p>Redirecting...</p>
-
 </body>
-</html># neatlyst-download
+</html>
